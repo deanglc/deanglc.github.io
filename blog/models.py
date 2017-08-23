@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+import markdown
+from django.utils.html import strip_tags
 from django.contrib.auth.models import User
 from django.db import models
 from django.urls import reverse
@@ -32,6 +34,7 @@ class Post(models.Model):
     created_time = models.DateTimeField()
     modified_time = models.DateTimeField()
     excerpt = models.CharField(max_length=200, blank=True)  # 摘要
+    views = models.PositiveIntegerField(default=0)
 
     # 接下来为外键 https://docs.djangoproject.com/en/1.10/topics/db/models/#relationships
     category = models.ForeignKey(Category)
@@ -39,7 +42,7 @@ class Post(models.Model):
 
     # 文章作者，User是从 django.contrib.auth.models 导入的。
     # 这个模块是django专门用来处理网站用户注册、登录等流程。
-    # User与文章是多对一，所以在此为ForeginKey
+    # User与文章是一对多，所以在此为ForeginKey
     author = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -52,3 +55,18 @@ class Post(models.Model):
 
     class Meta:
         ordering = ['-created_time']
+
+    def increase_views(self):
+        self.views += 1
+        self.save(update_fields=['views'])
+
+    def save(self, *args, **kwargs):
+        # 如果没有填写摘要excerpt
+        if not self.excerpt:
+            md = markdown.Markdown(extension=[
+                'markdown.extensions.extra',
+                'markdown.extensions.codehilite',
+            ])
+            self.excerpt = strip_tags(md.convert(self.body))[:54]
+
+        super(Post, self).save(*args, **kwargs)
