@@ -2,6 +2,8 @@
 from django.contrib.syndication.views import Feed
 from .models import Post
 
+class A(Feed):
+    pass
 
 class AllPostsRssFeed(Feed):
     title = "Django 博客演示项目"
