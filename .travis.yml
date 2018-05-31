@@ -1,0 +1,26 @@
+language: python
+python:
+    - 3.6
+    - nightly
+    - pypy3.5-5.8.0
+# command to install dependencies
+sudo: required
+install:
+  - pip install qiniu
+  - pip install glob2
+  - pip install bs4
+# command to run tests
+script: python upqiniu.py
+
+after_success:
+  - git push --force https://$git_token@github.com/deanglc/deanglc.github.io.git master
+branches:
+  only:
+  - master
+
+#deploy:
+#  provider: pages
+#  skip_cleanup: true
+#  github_token: $git_token # Set in travis-ci.org dashboard
+#  on:
+#    branch: master
