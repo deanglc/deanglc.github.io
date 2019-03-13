@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Footnote on Jane - A super concise theme for Hugo</title>
+    <title>Footnote on 吴叶磊</title>
     <link>/tags/footnote/</link>
-    <description>Recent content in Footnote on Jane - A super concise theme for Hugo</description>
+    <description>Recent content in Footnote on 吴叶磊</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
+    <language>zh-CN</language>
     <lastBuildDate>Thu, 01 Mar 2018 16:01:23 +0800</lastBuildDate>
     
 	<atom:link href="/tags/footnote/index.xml" rel="self" type="application/rss+xml" />
