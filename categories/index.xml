@@ -1,84 +1,30 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 吴叶磊</title>
-    <link>/categories/</link>
-    <description>Recent content in Categories on 吴叶磊</description>
+    <title>Categories on Dean Glc</title>
+    <link>https://glc.im/categories/</link>
+    <description>Recent content in Categories on Dean Glc</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh-cn</language>
     
-	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://glc.im/categories/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Development</title>
-      <link>/categories/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/development/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Docs</title>
-      <link>/categories/docs/</link>
-      <pubDate>Mon, 01 Jan 2018 16:01:23 +0800</pubDate>
+      <link>https://glc.im/categories/docs/</link>
+      <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>/categories/docs/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>English</title>
-      <link>/categories/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>/categories/english/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>/categories/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/categories/golang/</guid>
+      <guid>https://glc.im/categories/docs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Index</title>
-      <link>/categories/index/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
+      <link>https://glc.im/categories/index/</link>
+      <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>/categories/index/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shortcodes</title>
-      <link>/categories/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/categories/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>/categories/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>/categories/syntax-highlighting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Test</title>
-      <link>/categories/test/</link>
-      <pubDate>Wed, 30 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>/categories/test/</guid>
+      <guid>https://glc.im/categories/index/</guid>
       <description></description>
     </item>
     

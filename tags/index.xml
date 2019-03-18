@@ -1,184 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on 吴叶磊</title>
-    <link>/tags/</link>
-    <description>Recent content in Tags on 吴叶磊</description>
+    <title>Tags on Dean Glc</title>
+    <link>https://glc.im/tags/</link>
+    <description>Recent content in Tags on Dean Glc</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
-    <lastBuildDate>Sun, 28 Sep 2014 00:00:00 +0000</lastBuildDate>
+    <language>zh-cn</language>
+    <lastBuildDate>Thu, 07 Mar 2019 16:42:50 +0800</lastBuildDate>
     
-	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://glc.im/tags/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Development</title>
-      <link>/tags/development/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
+      <title>Deangggg</title>
+      <link>https://glc.im/tags/deangggg/</link>
+      <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>/tags/development/</guid>
+      <guid>https://glc.im/tags/deangggg/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>English</title>
-      <link>/tags/english/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
+      <title>Io</title>
+      <link>https://glc.im/tags/io/</link>
+      <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>/tags/english/</guid>
+      <guid>https://glc.im/tags/io/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Footnote</title>
-      <link>/tags/footnote/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
+      <title>模型</title>
+      <link>https://glc.im/tags/%E6%A8%A1%E5%9E%8B/</link>
+      <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>/tags/footnote/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Go</title>
-      <link>/tags/go/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/go/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Golang</title>
-      <link>/tags/golang/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/golang/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hugo</title>
-      <link>/tags/hugo/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/hugo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Image</title>
-      <link>/tags/image/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/image/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Jekyll</title>
-      <link>/tags/jekyll/</link>
-      <pubDate>Mon, 10 Mar 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/jekyll/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Markdown</title>
-      <link>/tags/markdown/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/markdown/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Preview</title>
-      <link>/tags/preview/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/preview/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Shortcodes</title>
-      <link>/tags/shortcodes/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/shortcodes/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>/tags/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/syntax-highlighting/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tag 11</title>
-      <link>/tags/tag-11/</link>
-      <pubDate>Thu, 01 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/tag-11/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tag 2</title>
-      <link>/tags/tag-2/</link>
-      <pubDate>Thu, 31 Aug 2017 15:43:48 +0800</pubDate>
-      
-      <guid>/tags/tag-2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tag 5</title>
-      <link>/tags/tag-5/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/tag-5/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tag 6</title>
-      <link>/tags/tag-6/</link>
-      <pubDate>Tue, 06 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/tag-6/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Tag 7</title>
-      <link>/tags/tag-7/</link>
-      <pubDate>Sat, 03 Mar 2018 16:01:23 +0800</pubDate>
-      
-      <guid>/tags/tag-7/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Templates</title>
-      <link>/tags/templates/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/templates/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Themes</title>
-      <link>/tags/themes/</link>
-      <pubDate>Sun, 28 Sep 2014 00:00:00 +0000</pubDate>
-      
-      <guid>/tags/themes/</guid>
+      <guid>https://glc.im/tags/%E6%A8%A1%E5%9E%8B/</guid>
       <description></description>
     </item>
     
