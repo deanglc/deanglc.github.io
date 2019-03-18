@@ -2,57 +2,57 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Dean Glc</title>
-    <link>https://glc.im/post/</link>
+    <link>https://deanglc.github.io/post/</link>
     <description>Recent content in Posts on Dean Glc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 07 Mar 2019 16:42:50 +0800</lastBuildDate>
     
-	<atom:link href="https://glc.im/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanglc.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B/</guid>
       <description>5种IO模型 阻塞IO模型 非阻塞IO模型 IO复用模型 信号驱动IO模型 异步IO模型 暂且理解I为input,O为output,即输入和输出. ref</description>
     </item>
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B2/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B2/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B2/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B2/</guid>
       <description>5种IO模型 阻塞IO模型 非阻塞IO模型 IO复用模型 信号驱动IO模型 异步IO模型 暂且理解I为input,O为output,即输入和输出. ref</description>
     </item>
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B3/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B3/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B3/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B3/</guid>
       <description>5种IO模型 阻塞IO模型 非阻塞IO模型 IO复用模型 信号驱动IO模型 异步IO模型 暂且理解I为input,O为output,即输入和输出. ref</description>
     </item>
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B4/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B4/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B4/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B4/</guid>
       <description>5种IO模型 阻塞IO模型 非阻塞IO模型 IO复用模型 信号驱动IO模型 异步IO模型 暂且理解I为input,O为output,即输入和输出. ref</description>
     </item>
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B5/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B5/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B5/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B5/</guid>
       <description>5种IO模型 阻塞IO模型 非阻塞IO模型 IO复用模型 信号驱动IO模型 异步IO模型 暂且理解I为input,O为output,即输入和输出. ref</description>
     </item>
     

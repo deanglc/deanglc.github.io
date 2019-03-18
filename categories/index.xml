@@ -2,29 +2,29 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Dean Glc</title>
-    <link>https://glc.im/categories/</link>
+    <link>https://deanglc.github.io/categories/</link>
     <description>Recent content in Categories on Dean Glc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     
-	<atom:link href="https://glc.im/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://deanglc.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Docs</title>
-      <link>https://glc.im/categories/docs/</link>
+      <link>https://deanglc.github.io/categories/docs/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/categories/docs/</guid>
+      <guid>https://deanglc.github.io/categories/docs/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Index</title>
-      <link>https://glc.im/categories/index/</link>
+      <link>https://deanglc.github.io/categories/index/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/categories/index/</guid>
+      <guid>https://deanglc.github.io/categories/index/</guid>
       <description></description>
     </item>
     

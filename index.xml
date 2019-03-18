@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Dean Glc</title>
-    <link>https://glc.im/</link>
+    <link>https://deanglc.github.io/</link>
     <description>Recent content on Dean Glc</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 20 Aug 2017 21:38:52 +0800</lastBuildDate>
     
-        <atom:link href="https://glc.im/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="https://deanglc.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>About</title>
-      <link>https://glc.im/about/</link>
+      <link>https://deanglc.github.io/about/</link>
       <pubDate>Sun, 20 Aug 2017 21:38:52 +0800</pubDate>
       
-      <guid>https://glc.im/about/</guid>
+      <guid>https://deanglc.github.io/about/</guid>
       
         <description>&lt;p&gt;&lt;a href=&#34;https://gongluchen.com&#34;&gt;Click&lt;/a&gt;&lt;/p&gt;
 </description>
@@ -25,10 +25,10 @@
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B/</guid>
       
         <description>
 
@@ -134,10 +134,10 @@
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B2/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B2/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B2/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B2/</guid>
       
         <description>
 
@@ -243,10 +243,10 @@
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B3/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B3/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B3/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B3/</guid>
       
         <description>
 
@@ -352,10 +352,10 @@
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B4/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B4/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B4/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B4/</guid>
       
         <description>
 
@@ -461,10 +461,10 @@
     
     <item>
       <title>IO模型整理</title>
-      <link>https://glc.im/post/io%E6%A8%A1%E5%9E%8B5/</link>
+      <link>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B5/</link>
       <pubDate>Thu, 07 Mar 2019 16:42:50 +0800</pubDate>
       
-      <guid>https://glc.im/post/io%E6%A8%A1%E5%9E%8B5/</guid>
+      <guid>https://deanglc.github.io/post/io%E6%A8%A1%E5%9E%8B5/</guid>
       
         <description>
 
