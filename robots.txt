@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://deanglc.github.io/sitemap.xml
+Sitemap: https://glc.im/sitemap.xml
