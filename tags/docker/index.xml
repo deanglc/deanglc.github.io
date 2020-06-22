@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>docker on Imp1mp</title>
+    <link>https://blog.glc.im/tags/docker/</link>
+    <description>Recent content in docker on Imp1mp</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-hans</language>
+    <copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright>
+    <lastBuildDate>Tue, 19 Mar 2019 11:00:53 +0000</lastBuildDate>
+    
+	<atom:link href="https://blog.glc.im/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Docker镜像瘦身&amp;Go mod初体验</title>
+      <link>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Tue, 19 Mar 2019 11:00:53 +0000</pubDate>
+      
+      <guid>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</guid>
+      <description>##Docker镜像瘦身&amp;amp;Go mod初体验 ​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &amp;lt;command&amp;gt; [arguments] The commands are: download download</description>
+    </item>
+    
+  </channel>
+</rss>

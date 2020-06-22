@@ -13,28 +13,18 @@
   </url>
   
   <url>
-    <loc>https://blog.glc.im/posts/first/</loc>
-    <lastmod>2020-06-21T11:33:24+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.glc.im/posts/go-redis%E7%9B%B8%E5%85%B3/</loc>
     <lastmod>2020-06-21T11:00:53+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.glc.im/tags/golang/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/hacking/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
+    <lastmod>2020-06-22T15:33:26+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.glc.im/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
+    <lastmod>2020-06-22T15:33:26+08:00</lastmod>
   </url>
   
   <url>
@@ -44,112 +34,37 @@
   
   <url>
     <loc>https://blog.glc.im/posts/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
+    <lastmod>2020-06-22T15:33:26+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.glc.im/tags/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
+    <lastmod>2020-06-22T15:33:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE1/</loc>
-    <lastmod>2020-06-21T11:33:24+08:00</lastmod>
+    <loc>https://blog.glc.im/posts/hacking/</loc>
+    <lastmod>2020-06-22T15:33:26+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE2/</loc>
-    <lastmod>2020-06-21T11:33:24+08:00</lastmod>
+    <loc>https://blog.glc.im/tags/docker/</loc>
+    <lastmod>2019-03-19T11:00:53+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE3/</loc>
-    <lastmod>2020-06-21T11:33:24+08:00</lastmod>
+    <loc>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</loc>
+    <lastmod>2019-03-19T11:00:53+00:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.glc.im/about/</loc>
-    <lastmod>2020-06-21T11:33:24+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/demo/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/image/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/the-figure-shortcode/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
+    <lastmod>2020-06-22T15:33:26+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://blog.glc.im/tags/https/</loc>
     <lastmod>2018-12-28T21:41:52+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/post-with-featured-image/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/typography/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/typography/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/creating-a-new-theme/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/goisforlovers/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/development/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/hugoisforlovers/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/go/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/hugo/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/templates/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/tags/themes/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://blog.glc.im/posts/backup/migrate-from-jekyll/</loc>
-    <lastmod>2020-06-22T06:23:38+08:00</lastmod>
   </url>
   
 </urlset>

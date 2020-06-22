@@ -22,47 +22,11 @@
     </item>
     
     <item>
-      <title>标签1</title>
-      <link>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE1/</link>
-      <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
+      <title>docker</title>
+      <link>https://blog.glc.im/tags/docker/</link>
+      <pubDate>Tue, 19 Mar 2019 11:00:53 +0000</pubDate>
       
-      <guid>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE1/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>标签2</title>
-      <link>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE2/</link>
-      <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE2/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>标签3</title>
-      <link>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE3/</link>
-      <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/tags/%E6%A0%87%E7%AD%BE3/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Demo</title>
-      <link>https://blog.glc.im/tags/demo/</link>
-      <pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/tags/demo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Image</title>
-      <link>https://blog.glc.im/tags/image/</link>
-      <pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/tags/image/</guid>
+      <guid>https://blog.glc.im/tags/docker/</guid>
       <description></description>
     </item>
     
@@ -72,33 +36,6 @@
       <pubDate>Thu, 20 Dec 2018 21:38:52 +0800</pubDate>
       
       <guid>https://blog.glc.im/tags/https/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Typography</title>
-      <link>https://blog.glc.im/tags/typography/</link>
-      <pubDate>Sat, 29 Sep 2018 11:36:33 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/tags/typography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>development</title>
-      <link>https://blog.glc.im/tags/development/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.glc.im/tags/development/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>go</title>
-      <link>https://blog.glc.im/tags/go/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
-      
-      <guid>https://blog.glc.im/tags/go/</guid>
       <description></description>
     </item>
     

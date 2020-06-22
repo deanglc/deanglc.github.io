@@ -31,15 +31,6 @@
     </item>
     
     <item>
-      <title>HACKING.md</title>
-      <link>https://blog.glc.im/posts/hacking/</link>
-      <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/posts/hacking/</guid>
-      <description>https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译 This is a living document and at times it will be out of date. It is intended to articulate how programming in the Go runtime differs from writing normal Go. It focuses on pervasive concepts rather than details of particular interfaces. Scheduler structures The scheduler manages three types of resources that pervade the runtime: Gs, Ms, and Ps. It&amp;rsquo;s important to understand these even if you&amp;rsquo;re</description>
-    </item>
-    
-    <item>
       <title>MPG.md</title>
       <link>https://blog.glc.im/posts/mpg%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
@@ -49,27 +40,21 @@
     </item>
     
     <item>
-      <title>(Hu)go Template Primer</title>
-      <link>https://blog.glc.im/posts/backup/goisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>渣翻Go runtime里的HACKING.md</title>
+      <link>https://blog.glc.im/posts/hacking/</link>
+      <pubDate>Thu, 21 Mar 2019 11:00:53 +0000</pubDate>
       
-      <guid>https://blog.glc.im/posts/backup/goisforlovers/</guid>
-      <description>Hugo uses the excellent Go html/template library for its template engine. It is an extremely lightweight engine that provides a very small amount of logic. In our experience that it is just the right amount of logic to be able to create a good static website. If you have used other template systems from different languages or frameworks you will find a lot of similarities in Go templates.
-This document is a brief primer on using Go templates.</description>
+      <guid>https://blog.glc.im/posts/hacking/</guid>
+      <description>源文件 https://github.com/golang/go/blob/master/src/runtime/HACKING.md Go1.11 This is a living document and at times it will be out of date. It is intended to articulate how programming in the Go runtime differs from writing normal Go. It focuses on pervasive concepts rather than details of particular interfaces. 这个文档的内容具有时效性(因为go的更新频繁)。</description>
     </item>
     
     <item>
-      <title>Getting Started with Hugo</title>
-      <link>https://blog.glc.im/posts/backup/hugoisforlovers/</link>
-      <pubDate>Wed, 02 Apr 2014 00:00:00 +0000</pubDate>
+      <title>Docker镜像瘦身&amp;Go mod初体验</title>
+      <link>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Tue, 19 Mar 2019 11:00:53 +0000</pubDate>
       
-      <guid>https://blog.glc.im/posts/backup/hugoisforlovers/</guid>
-      <description>Step 1. Install Hugo Go to Hugo releases and download the appropriate version for your OS and architecture.
-Save it somewhere specific as we will be using it in the next step.
-More complete instructions are available at Install Hugo
-Step 2. Build the Docs Hugo has its own example site which happens to also be the documentation site you are reading right now.
-Follow the following steps:
- Clone the Hugo repository Go into the repo Run hugo in server mode and build the docs Open your browser to http://localhost:1313  Corresponding pseudo commands:</description>
+      <guid>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</guid>
+      <description>##Docker镜像瘦身&amp;amp;Go mod初体验 ​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &amp;lt;command&amp;gt; [arguments] The commands are: download download</description>
     </item>
     
   </channel>

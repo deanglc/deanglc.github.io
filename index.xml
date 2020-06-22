@@ -31,30 +31,12 @@
     </item>
     
     <item>
-      <title>First</title>
-      <link>https://blog.glc.im/posts/first/</link>
-      <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/posts/first/</guid>
-      <description>排序你的文章 weight: 40 使用这两个参数将会重置permalink，默认使用文件名 url: slug: 别名将通过重定向实现 aliases: 别名1 /posts/my-original-url/ /2010/01/01/another-url.html</description>
-    </item>
-    
-    <item>
       <title>go-redis.md</title>
       <link>https://blog.glc.im/posts/go-redis%E7%9B%B8%E5%85%B3/</link>
       <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
       
       <guid>https://blog.glc.im/posts/go-redis%E7%9B%B8%E5%85%B3/</guid>
       <description>https://gopher.cc/go-redis-%E8%BF%9E%E6%8E%A5%E6%B1%A0-529.html // 定义redis链接池 var client *redis.Client // 初始化redis链接池 func init() { db, err := beego.AppConfig.Int(&amp;#34;redisDB&amp;#34;) if err != nil { logs.Error(&amp;#34;redis-db&amp;#34;, err) } client = redis.NewClient(&amp;amp;redis.Options{ Addr: beego.AppConfig.String(&amp;#34;redisAddr&amp;#34;), // Redis地址 Password: beego.AppConfig.String(&amp;#34;redisPassword&amp;#34;), // Redis账号 DB: db, // Re</description>
-    </item>
-    
-    <item>
-      <title>HACKING.md</title>
-      <link>https://blog.glc.im/posts/hacking/</link>
-      <pubDate>Sun, 21 Jun 2020 11:00:53 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/posts/hacking/</guid>
-      <description>https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译 This is a living document and at times it will be out of date. It is intended to articulate how programming in the Go runtime differs from writing normal Go. It focuses on pervasive concepts rather than details of particular interfaces. Scheduler structures The scheduler manages three types of resources that pervade the runtime: Gs, Ms, and Ps. It&amp;rsquo;s important to understand these even if you&amp;rsquo;re</description>
     </item>
     
     <item>
@@ -67,45 +49,30 @@
     </item>
     
     <item>
+      <title>渣翻Go runtime里的HACKING.md</title>
+      <link>https://blog.glc.im/posts/hacking/</link>
+      <pubDate>Thu, 21 Mar 2019 11:00:53 +0000</pubDate>
+      
+      <guid>https://blog.glc.im/posts/hacking/</guid>
+      <description>源文件 https://github.com/golang/go/blob/master/src/runtime/HACKING.md Go1.11 This is a living document and at times it will be out of date. It is intended to articulate how programming in the Go runtime differs from writing normal Go. It focuses on pervasive concepts rather than details of particular interfaces. 这个文档的内容具有时效性(因为go的更新频繁)。</description>
+    </item>
+    
+    <item>
+      <title>Docker镜像瘦身&amp;Go mod初体验</title>
+      <link>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</link>
+      <pubDate>Tue, 19 Mar 2019 11:00:53 +0000</pubDate>
+      
+      <guid>https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/</guid>
+      <description>##Docker镜像瘦身&amp;amp;Go mod初体验 ​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &amp;lt;command&amp;gt; [arguments] The commands are: download download</description>
+    </item>
+    
+    <item>
       <title>关于我</title>
       <link>https://blog.glc.im/about/</link>
       <pubDate>Fri, 15 Feb 2019 19:52:03 +0800</pubDate>
       
       <guid>https://blog.glc.im/about/</guid>
-      <description>你好！我是Imp1mp 喜欢golang</description>
-    </item>
-    
-    <item>
-      <title>The &#34;figure&#34; Shortcode</title>
-      <link>https://blog.glc.im/posts/backup/the-figure-shortcode/</link>
-      <pubDate>Mon, 24 Dec 2018 12:29:41 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/posts/backup/the-figure-shortcode/</guid>
-      <description>Hugo has figure shortcode built in, so you can easily add figcaptions or hyperlink rel attributes to images. Documentations can be found here:
-https://gohugo.io/content-management/shortcodes/#figure
-This theme has 3 CSS classes made for figure elements:
- big: images will break the width limit of main content area. left: images will float to the left. right: images will float to the right.  If a figure has no class set, the image will behave just like a normal markdown image: !</description>
-    </item>
-    
-    <item>
-      <title>Post With Featured Image</title>
-      <link>https://blog.glc.im/posts/backup/post-with-featured-image/</link>
-      <pubDate>Mon, 01 Oct 2018 16:15:09 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/posts/backup/post-with-featured-image/</guid>
-      <description>Just define the image URL in the content’s front matter, the featured image will be displayed as the background.
-For example:
----images:- https://picsum.photos/1024/768/?random---This is an array, you can set multiple urls, only the first url will be used. These images is also used in Twitter Cards and the Open Graph metadata.</description>
-    </item>
-    
-    <item>
-      <title>Typography</title>
-      <link>https://blog.glc.im/posts/backup/typography/</link>
-      <pubDate>Sat, 29 Sep 2018 11:36:33 +0800</pubDate>
-      
-      <guid>https://blog.glc.im/posts/backup/typography/</guid>
-      <description>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
- An apple is a sweet, edible fruit produced by an apple tree (Malus pumila).</description>
+      <description>你好！我是Imp1mp 喜欢golang 目前的阅读背景、字体颜色参考的是Typora的Night主题</description>
     </item>
     
   </channel>

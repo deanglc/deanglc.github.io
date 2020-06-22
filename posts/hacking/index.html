@@ -7,22 +7,22 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
-<meta itemprop="name" content="HACKING.md">
+<meta itemprop="name" content="渣翻Go runtime里的HACKING.md">
 <meta itemprop="description" content="&gt; https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译">
-<meta itemprop="datePublished" content="2020-06-21T11:00:53&#43;08:00" />
-<meta itemprop="dateModified" content="2020-06-22T06:23:38&#43;08:00" />
-<meta itemprop="wordCount" content="2029">
+<meta itemprop="datePublished" content="2019-03-21T11:00:53&#43;00:00" />
+<meta itemprop="dateModified" content="2020-06-22T15:33:26&#43;08:00" />
+<meta itemprop="wordCount" content="2774">
 
 
 
-<meta itemprop="keywords" content="golang," /><meta property="og:title" content="HACKING.md" />
+<meta itemprop="keywords" content="golang," /><meta property="og:title" content="渣翻Go runtime里的HACKING.md" />
 <meta property="og:description" content="&gt; https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.glc.im/posts/hacking/" />
-<meta property="article:published_time" content="2020-06-21T11:00:53+08:00" />
-<meta property="article:modified_time" content="2020-06-22T06:23:38+08:00" />
+<meta property="article:published_time" content="2019-03-21T11:00:53+00:00" />
+<meta property="article:modified_time" content="2020-06-22T15:33:26+08:00" />
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="HACKING.md"/>
+<meta name="twitter:title" content="渣翻Go runtime里的HACKING.md"/>
 <meta name="twitter:description" content="&gt; https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -32,8 +32,8 @@
 	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
 	<link rel="shortcut icon" href="/favicon.ico">
 
-	<title>HACKING.md</title>
-	<link rel="stylesheet" href="https://blog.glc.im/css/style.min.87c2e8555078c23c22541cb4ea5471322e90d322b98292ef39fb34b00fd96511.css" integrity="sha256-h8LoVVB4wjwiVBy06lRxMi6Q0yK5gpLvOfs0sA/ZZRE=" crossorigin="anonymous">
+	<title>渣翻Go runtime里的HACKING.md</title>
+	<link rel="stylesheet" href="https://blog.glc.im/css/style.min.3e851173333f3821549a64b251e4d710444592eed584cd917c6e2feed943ff0f.css" integrity="sha256-PoURczM/OCFUmmSyUeTXEERFku7VhM2RfG4v7tlD/w8=" crossorigin="anonymous">
 	
 </head>
 
@@ -68,29 +68,42 @@
 	<main class="site-main section-inner animated fadeIn faster">
 		<article class="thin">
 			<header class="post-header">
-				<div class="post-meta"><span>Jun 21, 2020</span></div>
-				<h1>HACKING.md</h1>
+				<div class="post-meta"><span>Mar 21, 2019</span></div>
+				<h1>渣翻Go runtime里的HACKING.md</h1>
 			</header>
 			<div class="content">
 				<blockquote>
-<p><a href="https://github.com/golang/go/blob/master/src/runtime/HACKING.md">https://github.com/golang/go/blob/master/src/runtime/HACKING.md</a> 待翻译</p>
+<p>源文件 <a href="https://github.com/golang/go/blob/master/src/runtime/HACKING.md">https://github.com/golang/go/blob/master/src/runtime/HACKING.md</a>   Go1.11</p>
 </blockquote>
 <p>This is a living document and at times it will be out of date. It is
 intended to articulate how programming in the Go runtime differs from
 writing normal Go. It focuses on pervasive concepts rather than
-details of particular interfaces.</p>
-<h1 id="scheduler-structures">Scheduler structures<a href="#scheduler-structures" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+details of particular interfaces.<br>
+<em><strong>这个文档的内容具有时效性(因为go的更新频繁)。该文档旨在说明runtime 代码和一般的 go 代码区别，所以主要内容是runtime里常见的概念而不是一些细节的实现。</strong></em></p>
+<h1 id="scheduler-structures-调度器结构">Scheduler structures-调度器结构<a href="#scheduler-structures-调度器结构" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>The scheduler manages three types of resources that pervade the
 runtime: Gs, Ms, and Ps. It&rsquo;s important to understand these even if
 you&rsquo;re not working on the scheduler.</p>
+<p><em><strong>调度器管理着3种类型:Gs, Ms, and Ps,且这仨在runtime随处可见,即便你是api仔,了解这些概念对你也很重要.</strong></em></p>
 <h2 id="gs-ms-ps">Gs, Ms, Ps<a href="#gs-ms-ps" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>A &ldquo;G&rdquo; is simply a goroutine. It&rsquo;s represented by type <code>g</code>. When a
 goroutine exits, its <code>g</code> object is returned to a pool of free <code>g</code>s and
 can later be reused for some other goroutine.</p>
-<p>An &ldquo;M&rdquo; is an OS thread that can be executing user Go code, runtime
+<p><em><strong>1个<code>G</code> = 1个goroutine.在 runtime 中用有个struct <code>g</code> (如下代码).当一个 goroutine 退出时，<code>g</code> 对象会被放一个空闲的 <code>g</code> 对象池中,以便其他的 goroutine 的使用。</strong></em></p>
+<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="c1">// grep &#34;type g struct&#34; ./ -R -n
+</span><span class="c1">// runtime/runtime2.go  
+</span><span class="c1">// m、p、g都在这个文件声明
+</span><span class="c1"></span><span class="kd">type</span> <span class="nx">g</span> <span class="kd">struct</span> <span class="p">{</span>
+	<span class="nx">stack</span>       <span class="nx">stack</span>   <span class="c1">// offset known to runtime/cgo
+</span><span class="c1"></span>	<span class="nx">stackguard0</span> <span class="kt">uintptr</span> <span class="c1">// offset known to liblink
+</span><span class="c1"></span>	<span class="nx">stackguard1</span> <span class="kt">uintptr</span> <span class="c1">// offset known to liblink
+</span><span class="c1"></span>  <span class="o">...</span>
+<span class="p">}</span> 
+</code></pre></div><p>An &ldquo;M&rdquo; is an OS thread that can be executing user Go code, runtime
 code, a system call, or be idle. It&rsquo;s represented by type <code>m</code>. There
 can be any number of Ms at a time since any number of threads may be
 blocked in system calls.</p>
+<p><em><strong>1个 <code>M</code> = 1个操作系统线程.<code>M</code>可以执行GO代码、runtime代码,也可以被调用和被闲置.在某一时刻,可以有任意数量的<code>M</code> 因为可能有任意数量的线程阻塞.</strong></em></p>
 <p>Finally, a &ldquo;P&rdquo; represents the resources required to execute user Go
 code, such as scheduler and memory allocator state. It&rsquo;s represented
 by type <code>p</code>. There are exactly <code>GOMAXPROCS</code> Ps. A P can be thought of
@@ -98,16 +111,19 @@ like a CPU in the OS scheduler and the contents of the <code>p</code> type like
 per-CPU state. This is a good place to put state that needs to be
 sharded for efficiency, but doesn&rsquo;t need to be per-thread or
 per-goroutine.</p>
+<p><em><strong><code>P</code> 代表着执行用户go代码的resources(上下文?),比如调度器状态、内存分配状态.在runtime里,(struct) p表示.<code>P</code> 的数量默认等于<code>GOMAXPROCS</code>的数量.一个<code>P</code>可视为一个操作系统调度器中的 CPU.struct <code>p</code>存储着每个CPU的状态.<code>p</code>便于存储一些需要高效分享的信息.</strong></em></p>
 <p>The scheduler&rsquo;s job is to match up a G (the code to execute), an M
 (where to execute it), and a P (the rights and resources to execute
 it). When an M stops executing user Go code, for example by entering a
 system call, it returns its P to the idle P pool. In order to resume
 executing user Go code, for example on return from a system call, it
 must acquire a P from the idle pool.</p>
+<p><em><strong>调度器的工作就是将一个<code>G</code>-(被执行的代码),一个<code>M</code>-(决定在哪里执行)、一个<code>P</code>(执行代码所需的权限和资源)匹配.当一个<code>M</code>停止执行用户的Go代码时(比如被系统调用),它将会把<code>P</code>放回一个P空闲池.相应的,在需要继续执行用户的Go代码时,也会从P空闲池取出一个<code>P</code></strong></em></p>
 <p>All <code>g</code>, <code>m</code>, and <code>p</code> objects are heap allocated, but are never freed,
 so their memory remains type stable. As a result, the runtime can
 avoid write barriers in the depths of the scheduler.</p>
-<h2 id="user-stacks-and-system-stacks">User stacks and system stacks<a href="#user-stacks-and-system-stacks" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
+<p><em><strong>g、m、p对象都分配在堆上且从不释放,所以他们在内存十分稳定.因此runtime底层无需实现内存屏障 .(write barriers本渣没得底蕴,暂时翻不出来)</strong></em></p>
+<h2 id="user-stacks-and-system-stacks-用户栈系统栈">User stacks and system stacks-用户栈&amp;系统栈<a href="#user-stacks-and-system-stacks-用户栈系统栈" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>Every non-dead G has a <em>user stack</em> associated with it, which is what
 user Go code executes on. User stacks start small (e.g., 2K) and grow
 or shrink dynamically.</p>
@@ -131,7 +147,7 @@ system or signal stacks, this will return the current M&rsquo;s &ldquo;g0&rdquo;
 &ldquo;gsignal&rdquo;, respectively. This is usually not what you want.</p>
 <p>To determine if you&rsquo;re running on the user stack or the system stack,
 use <code>getg() == getg().m.curg</code>.</p>
-<h1 id="error-handling-and-reporting">Error handling and reporting<a href="#error-handling-and-reporting" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h1 id="error-handling-and-reporting-错误处理">Error handling and reporting-错误处理<a href="#error-handling-and-reporting-错误处理" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>Errors that can reasonably be recovered from in user code should use
 <code>panic</code> like usual. However, there are some situations where <code>panic</code>
 will cause an immediate fatal error, such as when called on the system
@@ -144,7 +160,7 @@ details are printed before <code>throw</code> using <code>print</code> or <code>
 messages are prefixed with &ldquo;runtime:&rdquo;.</p>
 <p>For runtime error debugging, it&rsquo;s useful to run with
 <code>GOTRACEBACK=system</code> or <code>GOTRACEBACK=crash</code>.</p>
-<h1 id="synchronization">Synchronization<a href="#synchronization" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h1 id="synchronization-同步">Synchronization-同步<a href="#synchronization-同步" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>The runtime has multiple synchronization mechanisms. They differ in
 semantics and, in particular, in whether they interact with the
 goroutine scheduler or the OS scheduler.</p>
@@ -172,7 +188,7 @@ parked goroutine back in the &ldquo;runnable&rdquo; state and adds it to the run
 queue.</p>
 <p>In summary,</p>
 <!-- raw HTML omitted -->
-<h1 id="atomics">Atomics<a href="#atomics" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
+<h1 id="atomics-原子操作">Atomics-原子操作<a href="#atomics-原子操作" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h1>
 <p>The runtime uses its own atomics package at <code>runtime/internal/atomic</code>.
 This corresponds to <code>sync/atomic</code>, but functions have different names
 for historical reasons and there are a few additional functions needed
@@ -340,16 +356,16 @@ the readability of the runtime.</p>
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.glc.im/tags/golang">golang</a></span>
 				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2029 Words</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2020-06-21 11:00 &#43;0800</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2774 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-03-21</p>
 			</footer>
 		</article>
 		<div class="post-nav thin">
-			<a class="next-post" href="https://blog.glc.im/posts/go-redis%E7%9B%B8%E5%85%B3/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>go-redis.md</span>
+			<a class="next-post" href="https://blog.glc.im/posts/mpg%E7%9B%B8%E5%85%B3/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>MPG.md</span>
 			</a>
-			<a class="prev-post" href="https://blog.glc.im/posts/mpg%E7%9B%B8%E5%85%B3/">
-				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>MPG.md</span>
+			<a class="prev-post" href="https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/">
+				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Docker镜像瘦身&amp;Go mod初体验</span>
 			</a>
 		</div>
 		<div id="comments" class="thin">
