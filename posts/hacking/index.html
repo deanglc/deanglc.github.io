@@ -9,18 +9,19 @@
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="渣翻Go runtime里的HACKING.md">
 <meta itemprop="description" content="&gt; https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译">
-<meta itemprop="datePublished" content="2019-03-21T11:00:53&#43;00:00" />
-<meta itemprop="dateModified" content="2020-06-22T15:33:26&#43;08:00" />
-<meta itemprop="wordCount" content="2774">
+<meta itemprop="datePublished" content="2019-03-21T11:00:53+00:00" />
+<meta itemprop="dateModified" content="2020-11-10T12:34:54+08:00" />
+<meta itemprop="wordCount" content="2752">
 
 
 
-<meta itemprop="keywords" content="golang," /><meta property="og:title" content="渣翻Go runtime里的HACKING.md" />
+<meta itemprop="keywords" content="golang," />
+<meta property="og:title" content="渣翻Go runtime里的HACKING.md" />
 <meta property="og:description" content="&gt; https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.glc.im/posts/hacking/" />
 <meta property="article:published_time" content="2019-03-21T11:00:53+00:00" />
-<meta property="article:modified_time" content="2020-06-22T15:33:26+08:00" />
+<meta property="article:modified_time" content="2020-11-10T12:34:54+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="渣翻Go runtime里的HACKING.md"/>
 <meta name="twitter:description" content="&gt; https://github.com/golang/go/blob/master/src/runtime/HACKING.md 待翻译"/>
@@ -122,7 +123,7 @@ must acquire a P from the idle pool.</p>
 <p>All <code>g</code>, <code>m</code>, and <code>p</code> objects are heap allocated, but are never freed,
 so their memory remains type stable. As a result, the runtime can
 avoid write barriers in the depths of the scheduler.</p>
-<p><em><strong>g、m、p对象都分配在堆上且从不释放,所以他们在内存十分稳定.因此runtime底层无需实现内存屏障 .(write barriers本渣没得底蕴,暂时翻不出来)</strong></em></p>
+<p><em><strong>g、m、p对象都分配在堆上且从不释放,所以他们在内存十分稳定.因此runtime底层无需实现写屏障 .<a href="https://www.zhihu.com/question/62000722">write barriers&amp;gc</a></strong></em></p>
 <h2 id="user-stacks-and-system-stacks-用户栈系统栈">User stacks and system stacks-用户栈&amp;系统栈<a href="#user-stacks-and-system-stacks-用户栈系统栈" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h2>
 <p>Every non-dead G has a <em>user stack</em> associated with it, which is what
 user Go code executes on. User stacks start small (e.g., 2K) and grow
@@ -356,13 +357,13 @@ the readability of the runtime.</p>
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.glc.im/tags/golang">golang</a></span>
 				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2774 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>2752 Words</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-03-21</p>
 			</footer>
 		</article>
 		<div class="post-nav thin">
-			<a class="next-post" href="https://blog.glc.im/posts/mpg%E7%9B%B8%E5%85%B3/">
-				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>MPG.md</span>
+			<a class="next-post" href="https://blog.glc.im/posts/%E4%BD%BF%E7%94%A8acme%E7%94%B3%E8%AF%B7https%E8%AF%81%E4%B9%A6/">
+				<span class="post-nav-label"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>&nbsp;Newer</span><br><span>使用acme申请https免费证书</span>
 			</a>
 			<a class="prev-post" href="https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/">
 				<span class="post-nav-label">Older&nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-right"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg></span><br><span>Docker镜像瘦身&amp;Go mod初体验</span>

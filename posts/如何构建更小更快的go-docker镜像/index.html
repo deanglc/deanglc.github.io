@@ -8,22 +8,23 @@
 	<meta name="theme-color" content="#494f5c">
 	<meta name="msapplication-TileColor" content="#494f5c">
 <meta itemprop="name" content="Docker镜像瘦身&amp;Go mod初体验">
-<meta itemprop="description" content="##Docker镜像瘦身&amp;Go mod初体验 ​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &lt;command&gt; [arguments] The commands are: download download">
-<meta itemprop="datePublished" content="2019-03-19T11:00:53&#43;00:00" />
-<meta itemprop="dateModified" content="2019-03-19T11:00:53&#43;00:00" />
-<meta itemprop="wordCount" content="1417">
+<meta itemprop="description" content="​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &lt;command&gt; [arguments] The commands are: download download modules to local cache //ci/cd使用 edit edit go.mod from tools or scripts graph print module requirement graph">
+<meta itemprop="datePublished" content="2019-03-19T11:00:53+00:00" />
+<meta itemprop="dateModified" content="2019-03-19T11:00:53+00:00" />
+<meta itemprop="wordCount" content="1253">
 
 
 
-<meta itemprop="keywords" content="golang,docker," /><meta property="og:title" content="Docker镜像瘦身&amp;Go mod初体验" />
-<meta property="og:description" content="##Docker镜像瘦身&amp;Go mod初体验 ​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &lt;command&gt; [arguments] The commands are: download download" />
+<meta itemprop="keywords" content="golang,docker," />
+<meta property="og:title" content="Docker镜像瘦身&amp;Go mod初体验" />
+<meta property="og:description" content="​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &lt;command&gt; [arguments] The commands are: download download modules to local cache //ci/cd使用 edit edit go.mod from tools or scripts graph print module requirement graph" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://blog.glc.im/posts/%E5%A6%82%E4%BD%95%E6%9E%84%E5%BB%BA%E6%9B%B4%E5%B0%8F%E6%9B%B4%E5%BF%AB%E7%9A%84go-docker%E9%95%9C%E5%83%8F/" />
 <meta property="article:published_time" content="2019-03-19T11:00:53+00:00" />
 <meta property="article:modified_time" content="2019-03-19T11:00:53+00:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Docker镜像瘦身&amp;Go mod初体验"/>
-<meta name="twitter:description" content="##Docker镜像瘦身&amp;Go mod初体验 ​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &lt;command&gt; [arguments] The commands are: download download"/>
+<meta name="twitter:description" content="​ go1.11版本正式上线了 go module,研究了一哈,此次示例用上. Useage: go mod &lt;command&gt; [arguments] The commands are: download download modules to local cache //ci/cd使用 edit edit go.mod from tools or scripts graph print module requirement graph"/>
 
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -72,8 +73,7 @@
 				<h1>Docker镜像瘦身&amp;Go mod初体验</h1>
 			</header>
 			<div class="content">
-				<p>##Docker镜像瘦身&amp;Go mod初体验</p>
-<p>​    go1.11版本正式上线了 go module,研究了一哈,此次示例用上.</p>
+				<p>​    go1.11版本正式上线了 go module,研究了一哈,此次示例用上.</p>
 <div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">Useage</span><span class="p">:</span>	
 	<span class="k">go</span> <span class="nx">mod</span> <span class="p">&lt;</span><span class="nx">command</span><span class="p">&gt;</span> <span class="p">[</span><span class="nx">arguments</span><span class="p">]</span>
 
@@ -163,18 +163,7 @@
 <li>busybox: 带一些常用的工具，方便调试， 以及它的一些扩展busybox:glibc</li>
 <li>alpine: 另一个常用的基础镜像，带包管理功能，方便下载其它依赖的包</li>
 </ul>
-<div class="highlight"><pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="k">FROM</span><span class="s"> golang:alpine as builder  </span><span class="err">
-</span><span class="err"></span><span class="k">COPY</span> src/ /opt/src                                                                                                                                    COPY Makefile /opt                                                                                                                                            WORKDIR /opt                                                                                                                                         RUN apk add --update make upx git                                                                                                   RUN go get -u github.com/gin-gonic/gin <span class="se">\\</span>                                                                                                      <span class="o">&amp;&amp;</span> go get -u github.com/gin-contrib/cors <span class="se">\ </span>                                                                                                      <span class="o">&amp;&amp;</span> go get -u github.com/sirupsen/logrus <span class="se">\ </span>                                                                                                          <span class="o">&amp;&amp;</span> go get -u github.com/fatih/color <span class="se">\ </span>                                                                                                          <span class="o">&amp;&amp;</span> go get -u github.com/spf13/cobra <span class="se">\ </span>                                                                                                  <span class="o">&amp;&amp;</span> go get -u github.com/go-sql-driver/mysql <span class="se">\ </span>                                                                                                          <span class="o">&amp;&amp;</span> go get -u github.com/jinzhu/gorm <span class="se">\ </span>                                                                                                     <span class="o">&amp;&amp;</span> go get -u github.com/dgrijalva/jwt-go <span class="se">\ </span>                                                                                                  <span class="o">&amp;&amp;</span> go get -u github.com/bitly/go-simplejson <span class="se">\ </span>                                                                                          <span class="o">&amp;&amp;</span> go get -u github.com/lestrrat/go-file-rotatelogs <span class="se">\ </span>                                                                                                   <span class="o">&amp;&amp;</span> go get -u github.com/getsentry/raven-go <span class="se">\ </span>                                                                                                       <span class="o">&amp;&amp;</span> go get -u github.com/streadway/amqp <span class="se">\ </span>                                                                                                        <span class="o">&amp;&amp;</span> go get -u github.com/tidwall/gjson <span class="se">\ </span>                                                                                                          <span class="o">&amp;&amp;</span> go get -u github.com/spf13/viper <span class="se">\ </span>                                                                                                                                               <span class="o">&amp;&amp;</span> go get -u github.com/rifflock/lfshook<span class="err">
-</span><span class="err"></span>                                                                                                                                            RUN make docker<span class="err">
-</span><span class="err"></span>                                                                                                                                            FROM scratch                                                                                                                                COPY --from<span class="o">=</span>builder /opt/robotsln /usr/local/bin/<span class="err">
-</span><span class="err"></span><span class="k">COPY</span> --from<span class="o">=</span>builder /opt/conf.yaml /src/robocli/<span class="err">
-</span><span class="err"></span><span class="k">RUN</span> ls<span class="err">
-</span><span class="err"></span>                                                                                                                                            <span class="c1"># Refer: http://blog.cloud66.com/x509-error-when-using-https-inside-a-docker-container/</span><span class="err">
-</span><span class="err"></span>                                                                                                                                            RUN apk add --no-cache --update ca-certificates tzdata<span class="err">
-</span><span class="err"></span>                                                                                                                                            ENV TZ Asia/Shanghai<span class="err">
-</span><span class="err"></span>                                                                                                                                           EXPOSE <span class="m">9008</span><span class="err">
-</span><span class="err"></span>                                                                                                                                            CMD <span class="o">[</span> <span class="s2">&#34;project&#34;</span>, <span class="s2">&#34;-l&#34;</span>, <span class="s2">&#34;:9008&#34;</span>,<span class="s2">&#34;-d&#34;</span>,<span class="s2">&#34;database.connection&#34;</span><span class="o">]</span><span class="err">
-</span></code></pre></div><div class="highlight"><pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="c"># 1.go-build   这一部分使用go mod download</span><span class="err">
+<div class="highlight"><pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="c"># 1.go-build   这一部分使用go mod download</span><span class="err">
 </span><span class="err"></span><span class="k">FROM</span><span class="s"> golang:alpine AS build</span><span class="err">
 </span><span class="err"></span> <span class="c1"># 设置我们应用程序的工作目录</span><span class="err">
 </span><span class="err"></span><span class="k">WORKDIR</span><span class="s"> /go/src/github.com/path/to/project</span><span class="err">
@@ -204,7 +193,8 @@
 </span><span class="err"></span><span class="k">CMD</span> <span class="p">[</span><span class="s2">&#34;./project&#34;</span><span class="p">]</span><span class="err">
 </span><span class="err">
 </span></code></pre></div><p>提交代码触发了CI/CD,上服务器看了看新构建的容器比之前小了5MB.</p>
-<p>###ADD 还是 COPY?</p>
+<hr>
+<p><strong>ADD 还是 COPY?</strong></p>
 <p>copy是add的精简版.在大部分情况下docker官方推荐使用copy.</p>
 <p>add可以获取https://dddd.com/test.go 这样的文件到本地,甚至可以压缩.因为历史原因,才新增了精简版——copy.</p>
 
@@ -214,7 +204,7 @@
 				<p>
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-tag meta-icon"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7" y2="7"></line></svg><span class="tag"><a href="https://blog.glc.im/tags/golang">golang</a></span><span class="tag"><a href="https://blog.glc.im/tags/docker">docker</a></span>
 				</p>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1417 Words</p>
+				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file-text"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>1253 Words</p>
 				<p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>2019-03-19</p>
 			</footer>
 		</article>
